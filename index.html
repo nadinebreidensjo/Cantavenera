@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CANTAVENERA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --ink:#f4f0e8;
+  --muted:rgba(244,240,232,0.62);
+  --metal:#c9b8a7;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201,184,167,0.12), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(255,255,255,0.03), transparent 50%),
+    linear-gradient(120deg, #010101, #050505, #020202);
+
+  animation: ambient 18s ease-in-out infinite alternate;
+}
+
+@keyframes ambient{
+  0%{ filter:brightness(1); }
+  100%{ filter:brightness(1.05); }
+}
+
+/* rök */
+body::before{
+  content:'';
+  position:fixed;
+  inset:-40%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.05), transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(201,184,167,0.07), transparent 55%);
+  filter:blur(90px);
+  opacity:0.7;
+  animation: smoke 26s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+
+@keyframes smoke{
+  from{ transform:translate(-2%, -1%) scale(1); }
+  to{ transform:translate(3%, 2%) scale(1.1); }
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at center, transparent 35%, rgba(0,0,0,0.92) 100%);
+  pointer-events:none;
+}
+
+.noise{
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+  pointer-events:none;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:6rem 1.5rem;
+}
+
+.eyebrow{
+  letter-spacing:0.55em;
+  text-transform:uppercase;
+  font-size:0.7rem;
+  color:rgba(201,184,167,0.75);
+  margin-bottom:1.5rem;
+}
+
+/* 🌑 RESPONSIV WOW-RUBRIK */
+h1{
+  font-family:'Cormorant Garamond', serif;
+
+  /* FIX: skalar korrekt på alla enheter */
+  font-size:clamp(3.2rem, 8vw, 9rem);
+
+  letter-spacing:0.12em;
+  font-weight:600;
+  text-transform:uppercase;
+  line-height:1;
+
+  background: linear-gradient(
+    120deg,
+    #f5efe7 0%,
+    #c9b8a7 25%,
+    #ffffff 50%,
+    #a8927f 75%,
+    #f5efe7 100%
+  );
+
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation: shine 10s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 14px rgba(201,184,167,0.15))
+          drop-shadow(0 0 40px rgba(0,0,0,0.9));
+
+  position:relative;
+  max-width:100%;
+  padding:0 1rem;
+  word-break:break-word;
+}
+
+@keyframes shine{
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
+
+h1::before{
+  content:'CANTAVENERA';
+  position:absolute;
+  inset:0;
+  color:rgba(255,255,255,0.03);
+  transform:translateY(5px);
+  filter:blur(6px);
+  z-index:-1;
+}
+
+h1::after{
+  content:'';
+  display:block;
+  width:120px;
+  height:1px;
+  margin:2rem auto 0;
+  background:linear-gradient(to right, transparent, var(--metal), transparent);
+}
+
+.desc{
+  margin-top:3rem;
+  max-width:780px;
+  margin-inline:auto;
+  font-size:1.05rem;
+  line-height:2;
+  color:var(--muted);
+}
+
+.tagline{
+  margin-top:3rem;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  color:rgba(201,184,167,0.9);
+  letter-spacing:0.14em;
+  font-size:1.1rem;
+}
+
+/* MOBILE FIX EXTRA */
+@media (max-width: 480px){
+  .hero{
+    padding:5rem 1rem;
+  }
+
+  h1{
+    font-size:clamp(2.6rem, 12vw, 4.2rem);
+    letter-spacing:0.08em;
+  }
+
+  .desc{
+    font-size:0.95rem;
+    line-height:1.8;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<section class="hero">
+
+  <div>
+
+    <p class="eyebrow">La famiglia</p>
+
+    <h1>CANTAVENERA</h1>
+
+    <p class="desc">
+      En familj med rötter i Sicilien, formad av arv, tyst disciplin och en estetik som sitter i blodet.  
+      Vi bär med oss det italienska sättet att leva — där mat, kultur och närvaro är ett språk i sig — och låter det växa i Sverige genom skapande, smak och identitet.
+      <br><br>
+      Det här är inte en historia som ropar. Det är en som lever kvar i rummet långt efter att ljuset slocknat.
+    </p>
+
+    <p class="tagline">
+      famiglia non si spiega — si riconosce
+    </p>
+
+  </div>
+
+</section>
+
+</body>
+</html>
