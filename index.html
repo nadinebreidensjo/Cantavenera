@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>CANTAVENERA</title>
-
-<!-- =========================
-     FAVICON
-========================= -->
 
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-
-<!-- =========================
-     SHARE PREVIEW
-========================= -->
 
 <meta property="og:title" content="CANTAVENERA">
 <meta property="og:description" content="La Famiglia">
@@ -29,66 +19,38 @@
 <meta name="twitter:description" content="La Famiglia">
 <meta name="twitter:image" content="https://cantavenera.com/share.png">
 
-<!-- =========================
-     FONTS
-========================= -->
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 :root{
-  --gold:#e7c88b;
-  --gold-soft:rgba(231,200,139,0.72);
-  --bg:#050505;
+  --soft:rgba(232,199,139,.76);
 }
 
-html,
-body{
+html,body{
   width:100%;
   height:100%;
 }
 
 body{
   overflow:hidden;
-  background:#000;
+  background:#050505;
   font-family:"Inter", sans-serif;
 }
 
-/* =========================
-   HERO
-========================= */
-
 .hero{
-
   position:relative;
-
   width:100%;
   height:100vh;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
+  text-align:center;
   overflow:hidden;
 
   background-image:
-
-    linear-gradient(
-      rgba(0,0,0,0.34),
-      rgba(0,0,0,0.46)
-    ),
-
+    linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.54)),
     url("cantavenera-liggande-2.png");
 
   background-size:cover;
@@ -96,200 +58,119 @@ body{
   background-repeat:no-repeat;
 }
 
-/* cinematic depth */
-
-.hero::after{
-
-  content:'';
-
+.hero::before{
+  content:"";
   position:absolute;
   inset:0;
-
-  background:
-    radial-gradient(
-      circle at center,
-      transparent 30%,
-      rgba(0,0,0,0.78) 100%
-    );
-
+  background:radial-gradient(circle at center, transparent 28%, rgba(0,0,0,.78) 100%);
   pointer-events:none;
 }
 
-/* =========================
-   CONTENT
-========================= */
-
 .content{
-
   position:relative;
   z-index:2;
-
   width:100%;
-
-  text-align:center;
-
-  padding-inline:2rem;
+  padding:0 3vw;
 }
-
-/* =========================
-   TOP TEXT
-========================= */
 
 .kicker{
-
   font-family:"Cormorant Garamond", serif;
-
-  font-size:
-    clamp(0.9rem, 1.5vw, 1.4rem);
-
+  font-size:clamp(.9rem,1.5vw,1.55rem);
   font-weight:500;
-
-  letter-spacing:0.55em;
-
+  letter-spacing:.52em;
   text-transform:uppercase;
-
-  color:var(--gold-soft);
-
-  margin-bottom:1.3rem;
-
-  text-shadow:
-    0 4px 16px rgba(0,0,0,0.85);
+  color:var(--soft);
+  margin-bottom:1.35rem;
+  text-shadow:0 6px 18px rgba(0,0,0,.9);
 }
-
-/* =========================
-   DIVIDER
-========================= */
 
 .divider{
-
-  width:140px;
+  width:150px;
   height:1px;
-
-  margin:0 auto 2.2rem;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(231,200,139,0.9),
-      transparent
-    );
-
-  box-shadow:
-    0 0 14px rgba(231,200,139,0.14);
+  margin:0 auto 2.1rem;
+  background:linear-gradient(to right, transparent, rgba(232,199,139,.95), transparent);
 }
-
-/* =========================
-   MAIN TITLE
-========================= */
 
 h1{
-
-  font-family:"Cinzel", serif;
-  font-weight:600;
-
-  font-size:
-    clamp(2.8rem, 9.5vw, 9.5rem);
-
-  letter-spacing:
-    clamp(0.03em, 0.75vw, 0.12em);
-
-  line-height:0.9;
-
+  font-family:"Cormorant Garamond", serif;
+  font-weight:400;
+  font-size:clamp(2.7rem, 9.2vw, 9.2rem);
+  letter-spacing:clamp(.025em,.62vw,.105em);
+  line-height:.88;
   text-transform:uppercase;
-
   white-space:nowrap;
 
-  /* GOLD METALLIC */
-
-  background:
-    linear-gradient(
-      180deg,
-      #fff1cf 0%,
-      #e3bd72 20%,
-      #b9873f 46%,
-      #f4d493 62%,
-      #7b5426 100%
-    );
+  background:linear-gradient(
+    180deg,
+    #fff6d8 0%,
+    #efd08a 18%,
+    #c58d3c 38%,
+    #fff1bd 52%,
+    #b77c32 70%,
+    #6f451c 100%
+  );
 
   -webkit-background-clip:text;
+  background-clip:text;
   -webkit-text-fill-color:transparent;
 
+  -webkit-text-stroke:.35px rgba(255,239,190,.28);
+
   text-shadow:
-    0 2px 0 rgba(255,255,255,0.08),
-    0 8px 18px rgba(0,0,0,0.95),
-    0 20px 45px rgba(0,0,0,0.9);
+    0 1px 0 rgba(255,255,255,.13),
+    0 5px 14px rgba(0,0,0,.98),
+    0 22px 55px rgba(0,0,0,.95);
 
-  filter:
-    drop-shadow(0 0 10px rgba(201,151,76,0.12));
+  filter:drop-shadow(0 0 10px rgba(220,168,82,.18));
 }
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
-
   position:absolute;
-
+  z-index:3;
   left:50%;
   bottom:4vh;
-
   transform:translateX(-50%);
-
-  z-index:3;
-
   width:100%;
+  padding:0 1rem;
 
-  text-align:center;
-
-  padding-inline:1rem;
-
-  font-size:
-    clamp(0.58rem, 1vw, 0.78rem);
-
-  letter-spacing:0.3em;
-
+  font-family:"Cormorant Garamond", serif;
+  font-size:clamp(.55rem,.9vw,.74rem);
+  letter-spacing:.28em;
   text-transform:uppercase;
 
-  color:
-    rgba(231,200,139,0.72);
-
-  text-shadow:
-    0 4px 14px rgba(0,0,0,0.85);
+  color:rgba(232,199,139,.68);
+  text-shadow:0 5px 15px rgba(0,0,0,.9);
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-  h1{
-
-    font-size:
-      clamp(2rem, 12vw, 4.8rem);
-
-    letter-spacing:
-      clamp(0.02em, 0.3vw, 0.06em);
-
-    white-space:normal;
+@media(max-width:768px){
+  .content{
+    padding:0 1rem;
   }
 
   .kicker{
-    letter-spacing:0.3em;
+    letter-spacing:.32em;
   }
 
   .divider{
     width:90px;
   }
 
+  h1{
+    font-size:clamp(2rem, 12vw, 4.8rem);
+    letter-spacing:clamp(.01em,.35vw,.045em);
+  }
+
   footer{
-    letter-spacing:0.14em;
+    letter-spacing:.14em;
     line-height:1.7;
   }
 }
 
+@media(max-width:430px){
+  h1{
+    font-size:clamp(1.75rem, 10.5vw, 3.2rem);
+  }
+}
 </style>
 </head>
 
@@ -298,17 +179,9 @@ footer{
 <section class="hero">
 
   <div class="content">
-
-    <div class="kicker">
-      LA FAMIGLIA
-    </div>
-
+    <div class="kicker">LA FAMIGLIA</div>
     <div class="divider"></div>
-
-    <h1>
-      CANTAVENERA
-    </h1>
-
+    <h1>CANTAVENERA</h1>
   </div>
 
   <footer>
