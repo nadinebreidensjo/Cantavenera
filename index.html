@@ -1,26 +1,177 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hemsida</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CANTAVENERA</title>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-    body {
-      background-image: url("cantavenera-liggande.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  </style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #e8d8b8;
+  --muted: rgba(232, 216, 184, 0.72);
+  --bg: #080807;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8vh 6vw;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.18),
+      rgba(0,0,0,0.28)
+    ),
+    url("cantavenera-liggande-2.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* subtle dark edges */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 35%,
+    rgba(0,0,0,0.58) 100%
+  );
+  pointer-events: none;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.kicker {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1rem, 2vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+
+.divider {
+  width: 72px;
+  height: 1px;
+  margin: 0 auto 2.1rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(232,216,184,0.75),
+    transparent
+  );
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(3.8rem, 10vw, 10.5rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--text);
+  text-shadow: 0 10px 42px rgba(0,0,0,0.75);
+}
+
+footer {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 5vh;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+
+  font-size: clamp(0.62rem, 1vw, 0.82rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(232,216,184,0.72);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 7vh 1.4rem;
+    background-position: center;
+  }
+
+  .kicker {
+    letter-spacing: 0.38em;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+    letter-spacing: 0.14em;
+  }
+
+  footer {
+    bottom: 3vh;
+    letter-spacing: 0.18em;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+    letter-spacing: 0.1em;
+  }
+}
+</style>
 </head>
 
 <body>
+
+<main class="hero">
+  <section class="content" aria-label="Cantavenera familjesida">
+    <div class="kicker">La Famiglia</div>
+    <div class="divider"></div>
+    <h1>CANTAVENERA</h1>
+  </section>
+
+  <footer>
+    © 2026 CANTAVENERA — ALL RIGHTS RESERVED
+  </footer>
+</main>
+
 </body>
 </html>
