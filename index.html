@@ -2,175 +2,243 @@
 <html lang="sv">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CANTAVENERA</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-:root {
-  --text: #e8d8b8;
-  --muted: rgba(232, 216, 184, 0.72);
-  --bg: #080807;
+:root{
+  --bg:#080807;
+  --text:#e8d8b8;
+  --muted:rgba(232,216,184,0.72);
 }
 
 html,
-body {
-  width: 100%;
-  min-height: 100%;
+body{
+  width:100%;
+  min-height:100%;
 }
 
-body {
-  min-height: 100vh;
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+body{
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter", sans-serif;
+  overflow-x:hidden;
 }
 
-/* BACKGROUND IMAGE */
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 8vh 6vw;
+/* HERO */
+.hero{
+  min-height:100vh;
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  padding:8vh 5vw;
 
   background-image:
     linear-gradient(
-      rgba(0,0,0,0.18),
-      rgba(0,0,0,0.28)
+      rgba(0,0,0,0.22),
+      rgba(0,0,0,0.32)
     ),
-    url("cantavenera-liggande-2.png");
+    url("liggande.png");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  /* cinematic feel desktop */
+  background-attachment:fixed;
 }
 
-/* subtle dark edges */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 35%,
-    rgba(0,0,0,0.58) 100%
-  );
-  pointer-events: none;
+/* vignette */
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 38%,
+      rgba(0,0,0,0.62) 100%
+    );
+
+  pointer-events:none;
 }
 
 /* CONTENT */
-.content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1400px;
+.content{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  max-width:100%;
+
+  padding-inline:1rem;
 }
 
-.kicker {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1rem, 2vw, 1.65rem);
-  font-weight: 400;
-  letter-spacing: 0.55em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.6rem;
+/* TOP TEXT */
+.kicker{
+  font-family:"Cormorant Garamond", serif;
+  font-size:clamp(0.9rem, 1.6vw, 1.4rem);
+  font-weight:400;
+
+  letter-spacing:0.55em;
+  text-transform:uppercase;
+
+  color:var(--muted);
+
+  margin-bottom:1.5rem;
 }
 
-.divider {
-  width: 72px;
-  height: 1px;
-  margin: 0 auto 2.1rem;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(232,216,184,0.75),
-    transparent
-  );
+/* DIVIDER */
+.divider{
+  width:90px;
+  height:1px;
+
+  margin:0 auto 2rem;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(232,216,184,0.8),
+      transparent
+    );
 }
 
-h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: clamp(3.8rem, 10vw, 10.5rem);
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  line-height: 0.95;
-  color: var(--text);
-  text-shadow: 0 10px 42px rgba(0,0,0,0.75);
+/* MAIN TITLE */
+h1{
+  font-family:"Cormorant Garamond", serif;
+  font-weight:400;
+
+  font-size:clamp(2.4rem, 8vw, 8.5rem);
+
+  letter-spacing:clamp(0.08em, 1.6vw, 0.28em);
+
+  text-transform:uppercase;
+  line-height:0.95;
+
+  color:var(--text);
+
+  text-shadow:
+    0 10px 42px rgba(0,0,0,0.75);
+
+  width:100%;
+  max-width:100vw;
+
+  white-space:nowrap;
 }
 
-footer {
-  position: absolute;
-  z-index: 3;
-  left: 50%;
-  bottom: 5vh;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 0 2rem;
-  text-align: center;
+/* FOOTER */
+footer{
+  position:absolute;
+  z-index:3;
 
-  font-size: clamp(0.62rem, 1vw, 0.82rem);
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(232,216,184,0.72);
+  left:50%;
+  bottom:4vh;
+
+  transform:translateX(-50%);
+
+  width:100%;
+
+  padding:0 1.5rem;
+
+  text-align:center;
+
+  font-size:clamp(0.62rem, 1vw, 0.82rem);
+
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+
+  color:rgba(232,216,184,0.72);
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .hero {
-    padding: 7vh 1.4rem;
-    background-position: center;
+/* TABLET */
+@media (max-width:768px){
+
+  .hero{
+    padding:7vh 1.2rem;
+    background-attachment:scroll;
   }
 
-  .kicker {
-    letter-spacing: 0.38em;
-    margin-bottom: 1.2rem;
+  .kicker{
+    letter-spacing:0.38em;
+    margin-bottom:1.2rem;
   }
 
-  h1 {
-    font-size: clamp(3rem, 15vw, 5rem);
-    letter-spacing: 0.14em;
+  h1{
+    font-size:clamp(2.1rem, 12vw, 4.5rem);
+
+    letter-spacing:
+      clamp(0.04em, 1vw, 0.12em);
+
+    white-space:nowrap;
   }
 
-  footer {
-    bottom: 3vh;
-    letter-spacing: 0.18em;
-    line-height: 1.8;
+  footer{
+    bottom:3vh;
+
+    letter-spacing:0.16em;
+    line-height:1.8;
   }
 }
 
-@media (max-width: 420px) {
-  h1 {
-    font-size: clamp(2.5rem, 14vw, 4rem);
-    letter-spacing: 0.1em;
+/* SMALL MOBILE */
+@media (max-width:480px){
+
+  h1{
+    font-size:clamp(1.9rem, 11vw, 3.2rem);
+    letter-spacing:0.05em;
+  }
+
+  .kicker{
+    font-size:0.72rem;
+  }
+
+  footer{
+    font-size:0.58rem;
+    letter-spacing:0.12em;
   }
 }
+
 </style>
 </head>
 
 <body>
 
 <main class="hero">
-  <section class="content" aria-label="Cantavenera familjesida">
-    <div class="kicker">La Famiglia</div>
+
+  <section class="content">
+
+    <div class="kicker">
+      La Famiglia
+    </div>
+
     <div class="divider"></div>
-    <h1>CANTAVENERA</h1>
+
+    <h1>
+      CANTAVENERA
+    </h1>
+
   </section>
 
   <footer>
     © 2026 CANTAVENERA — ALL RIGHTS RESERVED
   </footer>
+
 </main>
 
 </body>
