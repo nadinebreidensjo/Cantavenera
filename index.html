@@ -33,7 +33,7 @@
      FONTS
 ========================= -->
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -48,46 +48,45 @@
 }
 
 :root{
-  --bg:#070707;
-  --gold:#e6d1ad;
-  --gold-soft:rgba(230,209,173,0.72);
+  --gold:#e7c88b;
+  --gold-soft:rgba(231,200,139,0.72);
+  --bg:#050505;
 }
 
 html,
 body{
   width:100%;
-  min-height:100%;
+  height:100%;
 }
 
 body{
-  background:var(--bg);
-  overflow-x:hidden;
+  overflow:hidden;
+  background:#000;
   font-family:"Inter", sans-serif;
 }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 
 .hero{
 
-  min-height:100vh;
-
   position:relative;
+
+  width:100%;
+  height:100vh;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  text-align:center;
-
-  padding:7vh 5vw;
+  overflow:hidden;
 
   background-image:
 
     linear-gradient(
-      rgba(0,0,0,0.30),
-      rgba(0,0,0,0.42)
+      rgba(0,0,0,0.34),
+      rgba(0,0,0,0.46)
     ),
 
     url("liggande.png");
@@ -95,11 +94,9 @@ body{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-
-  background-attachment:fixed;
 }
 
-/* cinematic vignette */
+/* cinematic depth */
 
 .hero::after{
 
@@ -112,7 +109,7 @@ body{
     radial-gradient(
       circle at center,
       transparent 30%,
-      rgba(0,0,0,0.72) 100%
+      rgba(0,0,0,0.78) 100%
     );
 
   pointer-events:none;
@@ -128,9 +125,10 @@ body{
   z-index:2;
 
   width:100%;
-  max-width:1600px;
 
-  padding-inline:1rem;
+  text-align:center;
+
+  padding-inline:2rem;
 }
 
 /* =========================
@@ -142,9 +140,9 @@ body{
   font-family:"Cormorant Garamond", serif;
 
   font-size:
-    clamp(0.95rem, 1.8vw, 1.8rem);
+    clamp(0.9rem, 1.5vw, 1.4rem);
 
-  font-weight:400;
+  font-weight:500;
 
   letter-spacing:0.55em;
 
@@ -152,10 +150,10 @@ body{
 
   color:var(--gold-soft);
 
-  margin-bottom:1.5rem;
+  margin-bottom:1.3rem;
 
   text-shadow:
-    0 4px 18px rgba(0,0,0,0.75);
+    0 4px 16px rgba(0,0,0,0.85);
 }
 
 /* =========================
@@ -164,21 +162,21 @@ body{
 
 .divider{
 
-  width:160px;
+  width:140px;
   height:1px;
 
-  margin:0 auto 2rem;
+  margin:0 auto 2.2rem;
 
   background:
     linear-gradient(
       to right,
       transparent,
-      rgba(230,209,173,0.85),
+      rgba(231,200,139,0.9),
       transparent
     );
 
   box-shadow:
-    0 0 12px rgba(230,209,173,0.15);
+    0 0 14px rgba(231,200,139,0.14);
 }
 
 /* =========================
@@ -187,71 +185,43 @@ body{
 
 h1{
 
-  font-family:"Cormorant Garamond", serif;
-  font-weight:500;
+  font-family:"Cinzel", serif;
+  font-weight:600;
 
   font-size:
-    clamp(3rem, 10vw, 10rem);
+    clamp(2.8rem, 9.5vw, 9.5rem);
 
-  letter-spacing:0.14em;
+  letter-spacing:
+    clamp(0.03em, 0.75vw, 0.12em);
 
-  line-height:0.92;
+  line-height:0.9;
 
   text-transform:uppercase;
 
-  width:100%;
-
   white-space:nowrap;
 
-  /* GOLD METALLIC EFFECT */
+  /* GOLD METALLIC */
 
   background:
     linear-gradient(
       180deg,
-      #f7e7c6 0%,
-      #d6b98b 22%,
-      #fff4df 38%,
-      #b58a54 52%,
-      #f3d7a8 68%,
-      #8b673d 100%
+      #fff1cf 0%,
+      #e3bd72 20%,
+      #b9873f 46%,
+      #f4d493 62%,
+      #7b5426 100%
     );
 
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 
   text-shadow:
-    0 1px 0 rgba(255,255,255,0.15),
-    0 2px 6px rgba(0,0,0,0.85),
-    0 12px 35px rgba(0,0,0,0.75);
+    0 2px 0 rgba(255,255,255,0.08),
+    0 8px 18px rgba(0,0,0,0.95),
+    0 20px 45px rgba(0,0,0,0.9);
 
   filter:
-    drop-shadow(0 0 12px rgba(214,185,139,0.12));
-
-  position:relative;
-}
-
-/* subtle metallic reflection */
-
-h1::after{
-
-  content:'';
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent 0%,
-      rgba(255,255,255,0.18) 45%,
-      transparent 60%
-    );
-
-  mix-blend-mode:screen;
-
-  opacity:0.35;
-
-  pointer-events:none;
+    drop-shadow(0 0 10px rgba(201,151,76,0.12));
 }
 
 /* =========================
@@ -271,77 +241,52 @@ footer{
 
   width:100%;
 
-  padding-inline:1rem;
-
   text-align:center;
 
-  font-size:
-    clamp(0.6rem, 1vw, 0.82rem);
+  padding-inline:1rem;
 
-  letter-spacing:0.32em;
+  font-size:
+    clamp(0.58rem, 1vw, 0.78rem);
+
+  letter-spacing:0.3em;
 
   text-transform:uppercase;
 
   color:
-    rgba(230,209,173,0.72);
+    rgba(231,200,139,0.72);
 
   text-shadow:
-    0 4px 14px rgba(0,0,0,0.7);
+    0 4px 14px rgba(0,0,0,0.85);
 }
 
 /* =========================
-   TABLET
+   MOBILE
 ========================= */
 
 @media (max-width:768px){
 
-  .hero{
-    background-attachment:scroll;
-    padding:6vh 1.2rem;
-  }
-
   h1{
 
     font-size:
-      clamp(2.1rem, 13vw, 5rem);
+      clamp(2rem, 12vw, 4.8rem);
 
     letter-spacing:
-      clamp(0.04em, 1vw, 0.08em);
+      clamp(0.02em, 0.3vw, 0.06em);
+
+    white-space:normal;
   }
 
   .kicker{
-    letter-spacing:0.38em;
+    letter-spacing:0.3em;
   }
 
   .divider{
-    width:100px;
+    width:90px;
   }
 
   footer{
-    letter-spacing:0.16em;
-    line-height:1.8;
-  }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width:480px){
-
-  h1{
-    font-size:
-      clamp(1.8rem, 11vw, 3.2rem);
-
-    letter-spacing:0.04em;
-  }
-
-  .kicker{
-    font-size:0.72rem;
-  }
-
-  footer{
-    font-size:0.55rem;
+    letter-spacing:0.14em;
+    line-height:1.7;
   }
 }
 
@@ -350,9 +295,9 @@ footer{
 
 <body>
 
-<main class="hero">
+<section class="hero">
 
-  <section class="content">
+  <div class="content">
 
     <div class="kicker">
       LA FAMIGLIA
@@ -364,13 +309,13 @@ footer{
       CANTAVENERA
     </h1>
 
-  </section>
+  </div>
 
   <footer>
     © 2026 CANTAVENERA — ALL RIGHTS RESERVED
   </footer>
 
-</main>
+</section>
 
 </body>
 </html>
